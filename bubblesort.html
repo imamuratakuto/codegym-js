@@ -16,12 +16,24 @@
 
     const run_button = document.getElementById('run-button');
     const result_text = document.getElementById('result-text');
-
+   
     run_button.addEventListener('click', () => {
         result_text.innerHTML = '';
         const nums = [100, 5, 2, -10, 8, 10, -1, 15, 1, -100];
-        let count = nums.length;
+        let count = nums.length;//配列の要素の数を数える
         console.log(count);
+        let i = 0;
+        let j = 0;
+        let temp = 0;
+        for (i = 0; i < count - 1; i ++) {
+            for (j = 0; j < count - 1 - i; j ++) {
+                if (nums[j] > nums[j + 1]) {
+                    temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
+            }
+        }
         
         //ここにコードを書きましょう。
         
